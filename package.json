@@ -1,0 +1,27 @@
+{
+  "name": "advanced-program",
+  "version": "1.0.0",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "main": "cucumber.js",
+  "scripts": {
+    "postinstall": "mkdir report",
+    "test": "cucumber-js --require cucumber.js --require step-definitions/*.js",
+    "test-example": "npx playwright test --project=chromium",
+    "report": "node reporter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.epam.com/sviatlana_tumilevich/advanced-program.git"
+  },
+  "keywords": [],
+  "author": "SVIATLANA TUMILEVICH",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^9.1.0",
+    "@playwright/test": "^1.32.3",
+    "@qavajs/html-formatter": "^0.0.10",
+    "playwright": "^1.32.3",
+    "winston": "^3.8.2",
+    "xray-formatter": "^2.1.5"
+  }
+}
