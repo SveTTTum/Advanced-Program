@@ -1,12 +1,4 @@
-// const common = `
-// 	-f json:reports/cucumber_report.json,
-// 	-f @qavajs/html-formatter:./reports/report.html,
-// 	-f xray-formatter:reports/xray.json,
-// 	--publish-quiet
-// `
-// module.exports = {
-//   default: `${common} features/*.feature`,
-// }
+const rpConfig = require(`./rp.config.json`);
 
 const common = {
 	paths: [
@@ -29,13 +21,7 @@ module.exports = {
 	ci: {
 		...common,
 		formatOptions: {
-			rpConfig: {
-				token: `bf09c1c3-ada2-4574-a97f-2bc41e0e38e3`,
-				endpoint: `https://reportportal.epam.com/api/v1`,
-				description: `Advanced Program`,
-				launch: `Playwright tests`,
-				project: `advanced-program`
-			},
+			rpConfig: rpConfig
 		},
 	}
 };
