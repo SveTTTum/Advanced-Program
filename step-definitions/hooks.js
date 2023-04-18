@@ -1,21 +1,22 @@
-const { Before, After, setDefaultTimeout } = require("@cucumber/cucumber");
+const { Before, BeforeAll, After, AfterAll, setDefaultTimeout } = require("@cucumber/cucumber");
 const { chromium } = require("playwright");
 
 setDefaultTimeout(60000);
 
+BeforeAll(async () => {
+    browser = await chromium.launch({ headless: false });
+});
+
 Before(async () => {
-    try {
-        browser = await chromium.launch({ headless: false});
-        const context = await browser.newContext();
-        page = await context.newPage();
-        await page.goto('http://localhost:8080');
-    }
-    catch (err) {
-        throw new Error(`chrome navigation to ${page} failed due to ${err}`);
-    }
-    return page;
- });
- 
- After(async function () {
+    context = await browser.newContext();
+    page = await context.newPage();
+    await page.goto('http://localhost:8080');
+});
+
+After(async function () {
+    await context.close();
+});
+
+AfterAll(async function () {
     await browser.close();
- });
+});

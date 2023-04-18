@@ -6,8 +6,8 @@ const homePage = require('../po/pages/home.page');
 const logger = require('../support/logger');
 
 Given('I am on Login page', async function () {
-   logger.info(`Page title should be "Report Portal"`);
-   await loginPage.waitFor(loginPage.LoginButton);
+  logger.info(`Page title should be "Report Portal"`);
+  await loginPage.waitFor(loginPage.LoginButton);
  })
 
  Then (`The title should be {string}`, async function (title) {

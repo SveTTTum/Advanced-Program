@@ -1,9 +1,11 @@
 const BasePage = require('./base.page');
 
 class LoginPage extends BasePage {
-  constructor() {
-    super('http://localhost:8080/ui/#login');
+  constructor(page, url = 'ui/#login') {
+    super(page);
+    this.url = url;
   };
+
   UsernameInput = 'div.inputOutside__input-outside--3DBix.type-text > input';
   PasswordInput = 'div.inputOutside__input-outside--3DBix.inputOutside__type-password--2sIQG > input';
   LoginButton = '.bigButton__big-button--ivY7j';
