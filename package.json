@@ -7,7 +7,8 @@
     "postinstall": "mkdir report",
     "test": "cucumber-js --require cucumber.js --require step-definitions/*.js",
     "test-example": "npx playwright test --project=chromium",
-    "report": "node reporter.js"
+    "report": "node reporter.js",
+    "eslint": "eslint ./"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   "author": "SVIATLANA TUMILEVICH",
   "license": "ISC",
   "dependencies": {
+    "@babel/eslint-parser": "^7.21.3",
     "@cucumber/cucumber": "^9.1.0",
     "@playwright/test": "^1.32.3",
     "@qavajs/html-formatter": "^0.0.10",

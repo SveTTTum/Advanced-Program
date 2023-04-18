@@ -13,10 +13,10 @@ const common = {
 		`xray-formatter:reports/xray.json`,
 	],
 	publishQuiet: true,
-}
+};
 
 module.exports = {
-	default: '--publish-quiet',
+	default: `--publish-quiet`,
 	common,
 	ci: {
 		...common,

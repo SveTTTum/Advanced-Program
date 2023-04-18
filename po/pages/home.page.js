@@ -1,11 +1,11 @@
-const BasePage = require('./base.page');
+const BasePage = require(`./base.page`);
 
 class HomePage extends BasePage {
-  constructor(page, url = 'ui/#administrate/projects') {
-    super(page);
-    this.url = url;
-  }
-  UserBlock = '.userBlock__avatar-wrapper--_Jkks';
+	constructor(page, url = `ui/#administrate/projects`) {
+		super(page);
+		this.url = url;
+	}
+	UserBlock = `.userBlock__avatar-wrapper--_Jkks`;
 
 }
 
