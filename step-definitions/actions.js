@@ -20,7 +20,10 @@ Then(`I wait {int} seconds`, async sec => {
 });
 
 When(`I logged in as {string} with password {string}`, async (username, password) => {
-	await loginPage.submitLoginWithParameters(username, password);
+	await page.locator(loginPage.UsernameInput).type(username);
+	await page.locator(loginPage.PasswordInput).type(password);
+	await page.locator(loginPage.LoginButton).click();
+	await homePage.waitFor(homePage.UserBlock);
 });
 
 Given(`I am on Home page`, async function () {
