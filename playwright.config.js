@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require(`@playwright/test`);
+const RPconfig = require(`./rp.config`);
 
 /**
  * Read environment variables from file.
@@ -21,7 +22,8 @@ module.exports = defineConfig({
 	workers: process.env.CI ? 4 : 2,
 	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
 	reporter: [
-		[`html`, { open: `never`, outputFolder: `reports/playwright-report` }]
+		[`html`, { open: `never`, outputFolder: `reports/playwright-report` }],
+		[`@reportportal/agent-js-playwright`, RPconfig],
 	],
 	/* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 	use: {
@@ -39,10 +41,10 @@ module.exports = defineConfig({
 			use: { ...devices[`Desktop Chrome`], headless: true, viewport: { width: 1280, height: 720, },},
 		},
 
-		{
-			name: `firefox`,
-			use: { ...devices[`Desktop Firefox`] },
-		},
+		// {
+		// 	name: `firefox`,
+		// 	use: { ...devices[`Desktop Firefox`] },
+		// },
 	],
 });
 

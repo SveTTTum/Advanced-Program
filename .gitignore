@@ -4,4 +4,5 @@ node_modules/
 /playwright/.cache/
 /reports/
 /logs/
-rp.config.json
+rp.config.js
+rpConfig.json

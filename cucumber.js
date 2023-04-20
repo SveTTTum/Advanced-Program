@@ -1,5 +1,3 @@
-const rpConfig = require(`./rp.config.json`);
-
 const common = {
 	paths: [
 		`features/*.feature`,
@@ -16,13 +14,4 @@ const common = {
 	publishQuiet: true,
 };
 
-module.exports = {
-	default: `--publish-quiet`,
-	common,
-	ci: {
-		...common,
-		formatOptions: {
-			rpConfig: rpConfig
-		},
-	}
-};
+module.exports = common;
