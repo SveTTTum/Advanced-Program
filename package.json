@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@reportportal/agent-js-cucumber": "^5.2.1",
-    "@reportportal/agent-js-playwright": "^5.0.11"
+    "@reportportal/agent-js-playwright": "^5.0.11",
+    "@types/node": "^18.15.13"
   }
 }
