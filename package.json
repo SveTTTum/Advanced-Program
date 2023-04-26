@@ -1,0 +1,36 @@
+{
+  "name": "advanced-program",
+  "version": "1.0.0",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "main": "cucumber.js",
+  "scripts": {
+    "postinstall": "mkdir report",
+    "test": "cucumber-js --require cucumber.js --require step-definitions/*.js",
+    "test-rp": "cucumber-js --require cucumber.js --require step-definitions/*.js -f ./support/reportPortalFormatter.js",
+    "test-example": "npx playwright test --project=chromium",
+    "report": "node reporter.js",
+    "eslint": "eslint ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.epam.com/sviatlana_tumilevich/advanced-program.git"
+  },
+  "keywords": [],
+  "author": "SVIATLANA TUMILEVICH",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/eslint-parser": "^7.21.3",
+    "@cucumber/cucumber": "^8.11.1",
+    "@playwright/test": "^1.32.3",
+    "@qavajs/html-formatter": "^0.0.10",
+    "cucumber-junit-reporter": "^0.0.1",
+    "playwright": "^1.32.3",
+    "winston": "^3.8.2",
+    "xray-formatter": "^2.1.5"
+  },
+  "devDependencies": {
+    "@reportportal/agent-js-cucumber": "^5.2.1",
+    "@reportportal/agent-js-playwright": "^5.0.11",
+    "@types/node": "^18.15.13"
+  }
+}

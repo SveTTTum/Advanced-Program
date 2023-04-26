@@ -1,0 +1,102 @@
+{
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "babelOptions": {
+            "babelrc": false,
+            "configFile": false
+        }
+    },
+    "rules": {
+        "arrow-parens": [
+            "error",
+            "as-needed"
+        ],
+        "arrow-spacing": "error",
+        "block-spacing": "error",
+        "brace-style": "error",
+        "comma-style": "error",
+        "implicit-arrow-linebreak": "error",
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "max-depth": [
+            "error",
+            4
+        ],
+        "no-confusing-arrow": "warn",
+        "no-extra-parens": "error",
+        "no-multi-spaces": "error",
+        "no-multiple-empty-lines": [
+            1,
+            {
+                "max": 1,
+                "maxEOF": 1
+            }
+        ],
+        "no-useless-escape": "off",
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "backtick"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-undef": "off",
+        "no-console": [
+            "error", {
+                "allow": ["warn", "error"]
+            }
+        ],
+        "prefer-const": "error",
+        "no-nested-ternary": "error",
+        "no-new": "error",
+        "no-new-func": "error",
+        "no-new-object": "error",
+        "no-process-exit": "error",
+        "no-return-await": "error",
+        "no-self-compare": "error",
+        "no-template-curly-in-string": "error",
+        "no-throw-literal": "error",
+        "no-trailing-spaces": "error",
+        "no-undef-init": "off",
+        "no-unmodified-loop-condition": "error",
+        "no-unneeded-ternary": "error",
+        "no-unused-vars": [
+          "warn",
+          {
+            "varsIgnorePattern": "_\\d*"
+          }
+        ],
+        "no-useless-call": "error",
+        "no-useless-computed-key": "error",
+        "no-var": "error",
+        "semi-spacing": "error",
+        "semi-style": "error",
+        "space-before-blocks": "error",
+        "space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "always",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+        "space-in-parens": "error",
+        "space-infix-ops": "error",
+        "spaced-comment": "warn",
+        "switch-colon-spacing": "error"
+    }
+  }
