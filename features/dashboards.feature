@@ -1,6 +1,6 @@
 Feature: Dashboards
 
-    @project
+    @PC-3 @project
     Scenario: Verify that dashboard contains expected fields in header
         * I logged in
         * I am on "Home" page

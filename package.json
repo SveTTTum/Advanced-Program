@@ -5,8 +5,8 @@
   "main": "cucumber.js",
   "scripts": {
     "postinstall": "mkdir report",
-    "test": "cucumber-js --require cucumber.js --require step-definitions/*.js",
-    "test-rp": "cucumber-js --require cucumber.js --require step-definitions/*.js -f ./support/reportPortalFormatter.js",
+    "test": "cucumber-js --config cucumber.js",
+    "test-rp": "cucumber-js --config cucumber.js -f ./support/reportPortalFormatter.js",
     "test:playwright": "npx playwright test --project=chromium",
     "report": "node reporter.js",
     "eslint": "eslint ./"

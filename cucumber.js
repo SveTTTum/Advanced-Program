@@ -12,9 +12,14 @@ const common = {
 		`cucumber-junit-reporter:reports/junit.xml`
 	],
 	publishQuiet: true,
+	formatOptions: {
+		jiraOptions: {
+			regexp: /(PC-\d+)/,
+			report: `./reports/xray.json`
+		}
+	}
 };
 
 module.exports = {
-	default: `--publish-quiet`,
-	common
+	default: common
 };
