@@ -14,4 +14,7 @@ const common = {
 	publishQuiet: true,
 };
 
-module.exports = common;
+module.exports = {
+	default: `--publish-quiet`,
+	common
+};

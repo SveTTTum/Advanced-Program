@@ -5,9 +5,9 @@ Run the following commands in the terminal:
 $> npm install
 
 
-### How to run playwright example
+### How to run playwright tests
 ```
-npm run test-example
+npm run test:playwright
 ```
 ### To open last HTML playwright report run:
 ```

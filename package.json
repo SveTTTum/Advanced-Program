@@ -7,7 +7,7 @@
     "postinstall": "mkdir report",
     "test": "cucumber-js --require cucumber.js --require step-definitions/*.js",
     "test-rp": "cucumber-js --require cucumber.js --require step-definitions/*.js -f ./support/reportPortalFormatter.js",
-    "test-example": "npx playwright test --project=chromium",
+    "test:playwright": "npx playwright test --project=chromium",
     "report": "node reporter.js",
     "eslint": "eslint ./"
   },

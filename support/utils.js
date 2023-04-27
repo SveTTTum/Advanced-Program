@@ -7,3 +7,5 @@ const getRandomNumberInRange = (lower = 0, upper = 10) => {
 	upper = Math.floor(upper);
 	return Math.floor(Math.random() * (upper - lower + 1)) + lower;
 };
+
+module.exports = {getRandomNumberInRange};
