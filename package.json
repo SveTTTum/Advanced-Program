@@ -4,10 +4,11 @@
   "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
   "main": "cucumber.js",
   "scripts": {
-    "postinstall": "mkdir report",
+    "postinstall": "mkdir reports",
     "test": "cucumber-js --config cucumber.js",
     "test-rp": "cucumber-js --config cucumber.js -f ./support/reportPortalFormatter.js",
     "test:playwright": "npx playwright test --project=chromium",
+    "test:jest": "jest  -c jest.config.js",
     "report": "node reporter.js",
     "eslint": "eslint ./"
   },
@@ -24,7 +25,10 @@
     "@playwright/test": "^1.32.3",
     "@qavajs/html-formatter": "^0.0.10",
     "cucumber-junit-reporter": "^0.0.1",
+    "jest": "^29.5.0",
+    "jest-playwright-preset": "^3.0.1",
     "playwright": "^1.32.3",
+    "playwright-chromium": "^1.33.0",
     "winston": "^3.8.2",
     "xray-formatter": "^2.1.5"
   },
