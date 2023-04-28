@@ -9,7 +9,7 @@ const common = {
 		`json:reports/cucumber_report.json`,
 		`@qavajs/html-formatter:./reports/report.html`,
 		`xray-formatter:reports/xray.json`,
-		`cucumber-junit-reporter:reports/junit.xml`
+		`junit:reports/junit.xml`
 	],
 	publishQuiet: true,
 	formatOptions: {
