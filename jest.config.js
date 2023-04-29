@@ -5,12 +5,19 @@
  */
 
 module.exports = {
+	displayName: {
+		name: `JEST`,
+		color: `magenta`,
+	},
 
 	clearMocks: true,
 
 	// A list of reporter names that Jest uses when writing coverage reports
 	coverageReporters: [
-		`text`
+		`clover`,
+		`json`,
+		`lcov`,
+		`['text', {skipFull: true}]`
 	],
 
 	// The root directory that Jest should scan for tests and modules within
@@ -30,5 +37,5 @@ module.exports = {
 		`\\\\node_modules\\\\`
 	],
 
-	preset: `jest-playwright-preset`
+	preset: `jest-playwright-preset`,
 };
