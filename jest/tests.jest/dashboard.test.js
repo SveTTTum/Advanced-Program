@@ -1,15 +1,11 @@
-const loginPage = require(`../po/pages/login.page`);
-const homePage = require(`../po/pages/home.page`);
-const creds = require(`../data/creds.json`);
-const DashboardsPage = require(`../po/pages/dashboards.page`);
-const dashboardHeaderData = require(`../data/DashboardsHeader.json`);
+const loginPage = require(`../../po/pages/login.page`);
+const homePage = require(`../../po/pages/home.page`);
+const creds = require(`../../data/creds.json`);
+const DashboardsPage = require(`../../po/pages/dashboards.page`);
+const dashboardHeaderData = require(`../../data/DashboardsHeader.json`);
 jest.setTimeout(40 * 1000);
-const { chromium } = require(`playwright`);
 
 beforeAll(async () => {
-	browser = await chromium.launch({ headless: false });
-	context = await browser.newContext();
-	page = await context.newPage();
 	await page.goto(`http://localhost:8080`);
 });
 
@@ -21,9 +17,4 @@ test(`Verify that dashboard contains expected fields in header`, async () => {
 	const headerFields = await page.locator(DashboardsPage.HeaderFields);
 	const headerFieldsTitles = await headerFields.allInnerTexts();
 	expect(headerFieldsTitles).toMatchObject(dashboardHeaderData);
-});
-
-afterAll(async () => {
-	await context.close();
-	await browser.close();
 });

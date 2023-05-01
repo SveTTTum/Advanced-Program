@@ -15,8 +15,6 @@ module.exports = {
 	reporters: [
 		`default`,
 	],
-	// The root directory that Jest should scan for tests and modules within
-	rootDir: `./tests.jest`,
 
 	// The number of seconds after which a test is considered as slow and reported as such in the results.
 	slowTestThreshold: 5,

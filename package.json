@@ -8,7 +8,7 @@
     "test": "cucumber-js --config cucumber.js",
     "test-rp": "cucumber-js --config cucumber.js -f ./support/reportPortalFormatter.js",
     "test:playwright": "npx playwright test --project=chromium",
-    "test:jest": "jest  -c jest.config.js",
+    "test:jest": "jest  --rootDir ./jest/",
     "report": "node reporter.js",
     "eslint": "eslint ./"
   },
