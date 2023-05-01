@@ -12,14 +12,9 @@ module.exports = {
 
 	clearMocks: true,
 
-	// A list of reporter names that Jest uses when writing coverage reports
-	coverageReporters: [
-		`clover`,
-		`json`,
-		`lcov`,
-		`['text', {skipFull: true}]`
+	reporters: [
+		`default`,
 	],
-
 	// The root directory that Jest should scan for tests and modules within
 	rootDir: `./tests.jest`,
 
@@ -38,4 +33,7 @@ module.exports = {
 	],
 
 	preset: `jest-playwright-preset`,
+	verbose: true,
+	maxConcurrency:4,
+	maxWorkers: `50%`,
 };

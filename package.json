@@ -16,6 +16,9 @@
     "type": "git",
     "url": "https://git.epam.com/sviatlana_tumilevich/advanced-program.git"
   },
+  "jest": {
+    "preset": "jest-playwright-preset"
+  },
   "keywords": [],
   "author": "SVIATLANA TUMILEVICH",
   "license": "ISC",

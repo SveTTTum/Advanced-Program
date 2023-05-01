@@ -18,3 +18,6 @@ npx playwright show-report
 ```
 npm run test
 ```
+### How to run DDT tests
+```
+npm run test:jest
