@@ -1,4 +1,5 @@
 const common = {
+	parallel: 4,
 	paths: [
 		`features/*.feature`,
 	],

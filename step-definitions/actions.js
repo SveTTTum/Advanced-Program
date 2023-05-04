@@ -1,11 +1,12 @@
 const {Given, When} = require(`@cucumber/cucumber`);
 const loginPage = require(`../po/pages/login.page`);
 const homePage = require(`../po/pages/home.page`);
+const DashboardsPage = require(`../po/pages/dashboards.page`);
 const logger = require(`../support/logger`);
 const creds = require(`../data/creds.json`);
 
 Given(`I am on {string} page`, async function (pageName) {
-	logger.info(`I am on ${pageName} page`);
+	logger.info(`I am on "${pageName}" page`);
 	if (pageName == `Login`) {
 		await loginPage.waitFor(loginPage.LoginButton);
 	} else {
@@ -22,9 +23,16 @@ When(`I logged in`, async () => {
 });
 
 When(`I select {string} project`, async projectName => {
-	logger.info(`I select ${projectName} project"`);
+	logger.info(`I select "${projectName}" project`);
 	await page.locator(homePage.ProjectsButton).click();
 	const projects = require(`../data/projects.json`);
 	const projectToSelect = projects[`${projectName}`];
 	await page.getByRole(`link`, { name: `${projectToSelect}` });
+});
+
+When(`I click {string}`, async element => {
+	logger.info(`I click "${element}"`);
+	const elementToClick = page.locator(DashboardsPage[element]);
+	await elementToClick.waitFor();
+	await elementToClick.click();
 });
