@@ -1,4 +1,5 @@
 const common = {
+	parallel: 4,
 	paths: [
 		`features/*.feature`,
 	],
@@ -9,9 +10,17 @@ const common = {
 		`json:reports/cucumber_report.json`,
 		`@qavajs/html-formatter:./reports/report.html`,
 		`xray-formatter:reports/xray.json`,
-		`cucumber-junit-reporter:reports/junit.xml`
+		`junit:reports/junit.xml`
 	],
 	publishQuiet: true,
+	formatOptions: {
+		jiraOptions: {
+			regexp: /(PC-\d+)/,
+			report: `./reports/xray.json`
+		}
+	}
 };
 
-module.exports = common;
+module.exports = {
+	default: common
+};
