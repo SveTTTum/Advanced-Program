@@ -1,6 +1,7 @@
 // @ts-check
 const { defineConfig, devices } = require(`@playwright/test`);
 const rpConfig = require(`./rpConfig.json`);
+const api = require(`./apiToken.json`);
 
 /**
  * Read environment variables from file.
@@ -37,19 +38,26 @@ module.exports = defineConfig({
 
 		/* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
 		trace: `on-first-retry`,
+		extraHTTPHeaders: {
+			// We set this header per GitHub guidelines.
+			Accept: `application/json`,
+			// Add authorization token to all requests.
+			// Assuming personal access token available in the environment.
+			Authorization: `bearer ${api.token}`,
+		},
 	},
 
 	/* Configure projects for major browsers */
-	projects: [
-		{
-			name: `chromium`,
-			use: { ...devices[`Desktop Chrome`], headless: true, viewport: { width: 1280, height: 720, },},
-		},
+	// projects: [
+	// 	{
+	// 		name: `chromium`,
+	// 		use: { ...devices[`Desktop Chrome`], headless: true, viewport: { width: 1280, height: 720, },},
+	// 	},
 
-		// {
-		// 	name: `firefox`,
-		// 	use: { ...devices[`Desktop Firefox`] },
-		// },
-	],
+	// {
+	// 	name: `firefox`,
+	// 	use: { ...devices[`Desktop Firefox`] },
+	// },
+	// ],
 });
 
