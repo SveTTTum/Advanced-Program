@@ -13,14 +13,9 @@ const registeredUser = Role(loginUrl, async t => {
 });
 
 const openDefaultProject = async t => {
-	const sl = Selector(`.projectSelector__project-selector--FXbsR.projectSelector__shown--YcXp5`);
-	await sl.visible;
-	await t.click(sl);
-	const projectElement = Selector(`.sidebar__sidebar--1J7aD a[href="#default_personal"] span`);
-	await projectElement.visible;
-	await t.click(projectElement);
+	await t.navigateTo(`http://localhost:8080/ui/#default_personal/`);
 	const dashboardsTitleElement = Selector(`.pageBreadcrumbs__page-breadcrumbs-item--1GzrN span`);
-	dashboardsTitleElement.visible;
+	await dashboardsTitleElement.visible;
 };
 
 module.exports = { registeredUser, openDefaultProject };
