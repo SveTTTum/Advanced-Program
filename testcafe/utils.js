@@ -1,4 +1,4 @@
-const { Role, Selector } = require(`testcafe`);
+const { Role, Selector, ClientFunction } = require(`testcafe`);
 const loginUrl = `http://localhost:8080`;
 
 const registeredUser = Role(loginUrl, async t => {
@@ -18,4 +18,9 @@ const openDefaultProject = async t => {
 	await dashboardsTitleElement.visible;
 };
 
-module.exports = { registeredUser, openDefaultProject };
+const resizeWidget = ClientFunction(() => {
+	document.querySelector(`.react-resizable:nth-child(4)`).style.width = `369px`;
+	document.querySelector(`.react-resizable:nth-child(4)`).style.height = `574px`;
+});
+
+module.exports = { registeredUser, openDefaultProject, resizeWidget };

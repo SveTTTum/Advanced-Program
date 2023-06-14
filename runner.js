@@ -11,7 +11,7 @@ createTestCafe(`localhost`, 1337, 1338)
 			.browsers([`chrome`])
 			.concurrency(1)
 			.screenshots(`./reports/screenshots/`, true)
-			.reporter(`spec`)
+			.reporter(`minimal`)
 			.run(
 				{
 					qurantineMode: false,
