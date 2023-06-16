@@ -9,6 +9,7 @@
     "test-rp": "cucumber-js --config cucumber.js -f ./support/reportPortalFormatter.js",
     "test:playwright": "npx playwright test",
     "test:jest": "jest  --rootDir ./jest/",
+    "test:testcafe": "node runner.js",
     "report": "node reporter.js",
     "eslint": "eslint ./"
   },
@@ -32,6 +33,7 @@
     "jest-playwright-preset": "^3.0.1",
     "playwright": "^1.32.3",
     "playwright-chromium": "^1.33.0",
+    "testcafe": "^2.6.2",
     "winston": "^3.8.2",
     "xray-formatter": "^2.1.5"
   },
