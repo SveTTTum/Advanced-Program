@@ -7,7 +7,7 @@ createTestCafe(`localhost`, 1337, 1338)
 		const runner = testcafe.createRunner();
 
 		return runner
-			.src([`testcafe/test.js`])
+			.src([`testcafe/test.js`, `testcafe/mock.js`])
 			.browsers([`chrome`])
 			.concurrency(1)
 			.screenshots(`./reports/screenshots/`, true)
