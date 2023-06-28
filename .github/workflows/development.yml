@@ -35,7 +35,7 @@ jobs:
       matrix:
         version: [14, 16, 18]
   #       os: [w]
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v3
