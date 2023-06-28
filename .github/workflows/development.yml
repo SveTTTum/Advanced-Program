@@ -1,18 +1,17 @@
 name: API Playwright tests
 
 on: push
-  #   branches:
-  #     - main,
-  #     - feature/ci-cd
-  # pull_request:
-  #   types:
-  #     - opened
-  #     - edited
-  #     - synchronize
-  #     - reopened
-  # schedule:
-  #     - cron: '30 5 * * 1,2,3,4,5'
-  # workflow_call:
+    branches:
+      - main,
+      - feature/ci-cd
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+  schedule:
+      - cron: '30 5 * * 1,2,3,4,5'
 
 jobs:
   lint:
@@ -29,24 +28,24 @@ jobs:
       - name: "🔍 lint code"
         run: npm run eslint
 
-  # test:
-  #   needs: [lint]
-  #   strategy:
-  #     matrix:
-  #       version: [14, 16, 18]
+  test:
+    needs: [lint]
+    strategy:
+      matrix:
+        version: [14, 16, 18]
   #       os: [w]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: "☁️ checkout repository"
-  #       uses: actions/checkout@v3
+    runs-on: ubuntu-latest
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
 
-  #     - name: "🔧 setup node"
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: ${{ matrix.version }}
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.version }}
 
-  #     - name: "📦 install dependencies"
-  #       uses: npm i
+      - name: "📦 install dependencies"
+        uses: npm i
 
-  #     - name: "🔍 run tests"
-  #       run: npm run test:playwright
+      - name: "🔍 run tests"
+        run: npm run test:playwright
