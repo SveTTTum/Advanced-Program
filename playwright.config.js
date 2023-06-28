@@ -1,5 +1,5 @@
 // @ts-check
-const { defineConfig, devices } = require(`@playwright/test`);
+const { defineConfig } = require(`@playwright/test`);
 const rpConfig = require(`./rpConfig.json`);
 const api = require(`./apiToken.json`);
 

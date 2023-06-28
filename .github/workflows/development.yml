@@ -1,55 +1,53 @@
-name: Development
+name: API Playwright tests
 
 on:
+  push:
+    branches:
+      - main,
+      - feature/ci-cd
   pull_request:
     types:
       - opened
       - edited
       - synchronize
       - reopened
+  schedule:
+      - cron: '30 5 * * 1,2,3,4,5'
   workflow_call:
 
 jobs:
-  test:
-    name: report portal
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: "☁️ checkout repository"
-        uses: actions/checkout@v2
-
-      - name: "🔧 setup node"
-        uses: actions/setup-node@v2.1.5
-        with:
-          node-version: 16
-
-      - name: "🔧 install npm@latest"
-        run: npm i -g npm@latest
-
-      - name: "📦 install dependencies"
-        uses: bahmutov/npm-install@v2
-
-      - name: "🔍 run tests"
-        run: npm run test:playwright --if-present
-
   lint:
     name: Code standards
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: "☁️ checkout repository"
-        uses: actions/checkout@v2
-
-      - name: "🔧 setup node"
-        uses: actions/setup-node@v2.1.5
-        with:
-          node-version: 16
-
-      - name: "🔧 install npm@latest"
-        run: npm i -g npm@latest
+        uses: actions/checkout@v3
 
       - name: "📦 install dependencies"
-        uses: bahmutov/npm-install@v2
+        run: npm i
 
       - name: "🔍 lint code"
-        run: npm run eslint --if-present
+        run: npm run eslint
+
+  test:
+  needs: [lint]
+    strategy:
+      matrix:
+        version: [14, 16, 18]
+        os: [w]
+    runs-on: ubuntu-latest
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.version }}
+
+      - name: "📦 install dependencies"
+        uses: npm i
+
+      - name: "🔍 run tests"
+        run: npm run test:playwright

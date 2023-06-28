@@ -1,5 +1,6 @@
 const createTestCafe = require(`testcafe`);
 let testcafe = null;
+const logger = require(`./support/logger`);
 
 createTestCafe(`localhost`, 1337, 1338)
 	.then(tc => {
@@ -24,6 +25,6 @@ createTestCafe(`localhost`, 1337, 1338)
 			);
 	})
 	.then(failedCount => {
-		console.log(`tests failed: ` + failedCount);
+		logger.info(`tests failed: ` + failedCount);
 		testcafe.close();
 	});

@@ -1,6 +1,6 @@
 const { Selector, ClientFunction } = require(`testcafe`);
 const logger = require(`../support/logger`);
-const { registeredUser, openDefaultProject, resizeWidget } = require(`./utils`);
+const { openDefaultProject } = require(`./utils`);
 
 fixture`Open report portal page`
 	.page`http://localhost:8080`
