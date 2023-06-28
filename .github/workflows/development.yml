@@ -1,6 +1,7 @@
 name: API Playwright tests
 
-on: push
+on: 
+  push:
     branches:
       - main,
       - feature/ci-cd
