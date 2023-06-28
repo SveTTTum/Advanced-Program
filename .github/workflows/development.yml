@@ -46,7 +46,7 @@ jobs:
           node-version: ${{ matrix.version }}
 
       - name: "📦 install dependencies"
-        uses: npm i
+        run: npm i
 
       - name: "🔍 run tests"
         run: npm run test:playwright
