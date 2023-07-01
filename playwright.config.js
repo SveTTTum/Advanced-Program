@@ -1,7 +1,7 @@
 // @ts-check
 const { defineConfig } = require(`@playwright/test`);
 const rpConfig = require(`./rpConfig.json`);
-const api = require(`./apiToken.json`);
+const api_token = process.env.API_TOKEN;
 
 /**
  * Read environment variables from file.
@@ -43,7 +43,7 @@ module.exports = defineConfig({
 			Accept: `application/json`,
 			// Add authorization token to all requests.
 			// Assuming personal access token available in the environment.
-			Authorization: `bearer ${api.token}`,
+			Authorization: `bearer ${api_token}`,
 		},
 	},
 
