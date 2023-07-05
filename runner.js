@@ -8,8 +8,8 @@ createTestCafe(`localhost`, 1337, 1338)
 		const runner = testcafe.createRunner();
 
 		return runner
-			.src([`testcafe/test.js`])
-			.browsers([`chrome`])
+			.src([`testcafe/test-vl.js`])
+			.browsers(`chrome:headless`)
 			.concurrency(1)
 			.screenshots(`./reports/screenshots/`, true)
 			.reporter(`minimal`)

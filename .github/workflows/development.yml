@@ -49,6 +49,4 @@ jobs:
         run: npm i
 
       - name: "🔍 run tests"
-        run: npm run test:playwright
-        env:
-          API_TOKEN: ${{ secrets.API_TOKEN }}
+        run: npm run test:testcafe
